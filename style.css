@@ -60,6 +60,10 @@ body{
 
 /* Blog */
 /* Header/Blog Title */
+* {
+  box-sizing: border-box;
+}
+
 .header {
   padding: 30px;
   font-size: 40px;

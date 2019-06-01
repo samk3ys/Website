@@ -3,10 +3,14 @@ html, body{
     height:100%;
 }
 body{
-    background-color:#0c0129;
+    background: no-repeat center center fixed;
     background-image:url(images/CumberlandGapSand.jpg);
-    background-position:center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size:cover;
+    background-color:#0c0129;
+    background-position:center;
     background-blend-mode:soft-light;
     
 }

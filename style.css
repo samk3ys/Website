@@ -1,6 +1,8 @@
 /* General Body */
 html, body{
     height:100%;
+    margin: 0;
+    padding: 0;
 }
 body{
     background: no-repeat center center fixed;
@@ -11,19 +13,123 @@ body{
     background-size:cover;
     background-position:center;
     background-blend-mode:soft-light;
-    
+}
+* { box-sizing: border-box; }
+.container{ /* Holds header, content, and footer */
+    min-height: 100%;
+    position: relative;
 }
 
-/* Front Page (Index) */
-.heading{
+/* Header / Link Bar */
+#header{
+    text-align: center;
+    background: black;
+    top: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    float: left;
+    height: 10.3rem;
+}
+.headTitle{     /* Container for logo image */
+    margin: auto;
+    width: 50%;
+}
+.logo{          /* Logo picture */
+    height:6rem;
+}
+#menu{          /* Container for page link buttons */
+    margin: auto;
+    width: 30%;
+    background: black;
+}
+.pageLink{      /* Buttons to other pages */
+    margin: auto;
+    display: block;
+    width: 33.333%;
+    height: 4rem;
+    background-color: rgba(255,255,255,0);   /* RGB color and Alpha transparency percentage [0,1] */
+    color: white;
+    border: 0px solid white;                 /* Border (unaffected by "background-color" */
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 1000ms, color 1000ms;
+    float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    white-space: nowrap;
+}
+.pageLink:hover{
+    background-color:rgba(255,255,255,1);
+    color:#222;
+    cursor:pointer;
+    transition:background-color 1000ms, color 1000ms;
+}
+
+/* Footer / Social Media Links */
+#footer{
+    margin-top: 0px;
+    text-align: center;
+    color: white;
+    background: black;
+    width: 100%;
+    height: 10rem;
+    bottom: 0;
+    position: absolute;
+    
+}
+.contactLinks{  /* Row for social media buttons */
+    margin-top: 0px;
+    margin-bottom: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 504px;       /* #buttons * (buttonWidth + 2*buttonMargin) */
+    background: black;
+}
+.social{        /* Social media button (use <a> tag around) */
+    margin: 10px;
+    height: 64px;
+    border-radius: 30px;
+    padding: 4px;
+    opacity: 0.5;
+    transition:opacity 500ms, border-radius 1000ms;
+    text-decoration:none;
+    float: left;
+}
+.social:hover{  /* Social media button animation */
+    opacity: 1;
+    border-radius: 10px;
+    transition:opacity 500ms, border-radius 1000ms;
+}
+
+/* Multi-page / universal elements */
+.content{
+    padding-top: 11rem;
+    padding-bottom: 11rem;
+    margin-left:5%;
+    margin-right:5%;
+}
+.content:after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Home Page (Index) */
+.homepage{      /* Special settings for homepage */
+    overflow: hidden    /* Stop scrolling */
+}
+.title{         /* Content in middle */
     width:100%;
-    height:50%;
+    height:30%;
     margin:auto;
     position:absolute;
     top:0px; bottom:0px; right:0px; left:0px;
-    background-color: #aaa;
 }
-.name{
+.name{          /* Sam Keys */
     display: block;
     text-align: center;
     color: white;
@@ -36,88 +142,42 @@ body{
     margin-top:15px;
     text-align: center;
     color:white;
-    font-size:14pt;
+    font-size: 3vh;
     font-family:serif;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-/* Buttons */
-.button{
-    margin:50px auto;
-    display:block;
-    width:180px;
-    height:50px;
-    background-color:rgba(255,255,255,0);   /* RGB color and Alpha transparency percentage [0,1] */
-    color:white;
-    border:3px solid white;                 /* Border (unaffected by "background-color" */
-    font-family:sans-serif;
-    font-weight:bold;
-    border-radius:5px;
-    
-    transition:background-color 1000ms, color 1000ms;
-}
-.button:hover{
-    background-color:rgba(255,255,255,1);
-    color:#222;
-    cursor:pointer;
-    
-    transition:background-color 1000ms, color 1000ms;
-}
-
-/* Blog */
-/* Header/Blog Title */
-* {
-  box-sizing: border-box;
-}
-
-.header {
+/* About Me Page */
+#aboutBG{       /* Background */
+  background-color: white;
+  margin-top: 20px;
   padding: 30px;
-  font-size: 40px;
-  text-align: center;
-  background: white;
 }
-/* Create two unequal columns that floats next to each other */
-/* Left column */
-.leftcolumn { 
-  float: left;
-  width: 75%;
+
+/* Project Page */
+.project{       /* individual project card */
+  background-color: white;
+  margin-top: 20px;
+  padding: 30px;
 }
-/* Right column */
-.rightcolumn {
-  float: left;
-  width: 25%;
-  padding-left: 20px;
-}
-/* Fake image */
-.fakeimg {
+.image{         /* Project image */
   background-color: #aaa;
   width: 100%;
   padding: 20px;
 }
-/* Add a card effect for articles */
-.card {
+
+/* Curriculum Vitae Page */
+#cv {           /* Background */
   background-color: white;
-  padding: 20px;
   margin-top: 20px;
+  padding: 30px;
 }
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-/* Footer */
-.footer {
-  padding: 20px;
-  text-align: center;
-  background: #ddd;
-  margin-top: 20px;
-}
+
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 800px) {
+/* @media screen and (max-width: 800px) {
   .leftcolumn, .rightcolumn { 
     width: 100%;
     padding: 0;
   }
-}
+} */
 

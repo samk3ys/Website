@@ -96,7 +96,7 @@
    <script type="text/javascript"> <!--Sticky Header-->
         window.onscroll = function() {stickHeader()};
 
-        var header = document.getElementById("header");
+        var home = document.getElementById("logo");
         var menu = document.getElementById("menu");
         var sticky = menu.offsetTop;
 
@@ -108,6 +108,10 @@
             menu.style.top = "0";
             menu.style.paddingLeft = "35%";
             menu.style.paddingRight = "35%";
+            /* home.style.height = "4rem";
+            home.style.top = "0";
+            home.style.left = "0";
+            home.style.position = "fixed"; */
           } else {
             <!-- menu.classList.remove("sticky"); -->
             menu.style.width = "30%";

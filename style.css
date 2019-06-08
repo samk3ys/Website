@@ -175,9 +175,21 @@ body{
 
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 800px) {
-  
-  #menu { 
-    width: 100%;
-  }
+    #menu { 
+        width: 100%;
+    }
+    .contactLinks{
+        width: 18em;
+    }
+    .social {
+        margin: 0.5em;
+        height: 2em;
+        border-radius: 0.5em;
+        padding: 4px;
+    }
+    .content{
+        margin-left:0;
+        margin-right:0;
+    }
 }
 

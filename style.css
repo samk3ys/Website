@@ -31,10 +31,6 @@ body{
     float: left;
     height: 10.3rem;
 }
-.headTitle{     /* Container for logo image */
-    margin: auto;
-    width: 50%;
-}
 .logo{          /* Logo picture */
     height:6rem;
 }

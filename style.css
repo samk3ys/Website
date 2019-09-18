@@ -120,11 +120,12 @@ body{
 .title{         /* Content in middle */
     width:100%;
     height:80%;
-    margin:auto;
+    margin:0 auto;
     position:absolute;
-    top:10.3rem; bottom:10rem; right:0px; left:0px;
-    overflow: hidden
-}
+    top:0px; bottom:0px; right:0px; left:0px;
+    padding-top:11rem;
+    
+    }
 .name{          /* Sam Keys */
     display: block;
     text-align: center;
@@ -141,6 +142,7 @@ body{
     font-size: 3vh;
     font-family:serif;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    padding-bottom:11rem;
 }
 
 /* About Me Page */
@@ -160,25 +162,32 @@ body{
 
 /* Project Page */
 .project{       /* individual project card */
-  background-color: white;
-  margin-top: 20px;
-  padding: 30px;
+    background-color: white;
+    margin-top: 20px;
+    padding: 30px;
 }
 .image{         /* Project image */
-  background-color: #aaa;
-  width: 100%;
-  padding: 20px;
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
 }
 
 /* Curriculum Vitae Page */
 #cv {           /* Background */
-  background-color: white;
-  margin-top: 20px;
-  padding: 30px;
+    background-color: white;
+    margin-top: 20px;
+    padding: 30px;
+}
+
+.resume{
+    margin-left:auto;
+    margin-right:auto;
+    display:block;
+    width:90% 
 }
 
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
     #menu { 
         width: 100%;
     }
@@ -198,6 +207,10 @@ body{
     
     .headshot{
         width: 80%;
+    }
+    
+    .resume{
+        width:100% 
     }
 }
 

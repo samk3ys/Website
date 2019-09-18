@@ -181,6 +181,10 @@ body{
     #menu { 
         width: 100%;
     }
+    #footer{
+        font-size: 1vh;
+        height:  5rem;
+    }
     .contactLinks{
         width: 18em;
     }

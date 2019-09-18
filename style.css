@@ -7,9 +7,6 @@ html, body{
 body{
     background: no-repeat center center fixed;
     background-image:url(images/CumberlandGapSandGreen.jpg);
-    -webkit-background-size: cover;
-    -moz-background-size: inherit;
-    -o-background-size: cover;
     background-size:cover;
     background-position:center;
     background-blend-mode:soft-light;

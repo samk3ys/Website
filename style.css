@@ -70,9 +70,10 @@ body{
     color: white;
     background: black;
     width: 100%;
-    height: 9rem;
+    height: 10rem;
     bottom: 0;
-    position: absolute;    
+    position: fixed;
+    
 }
 
 .contactLinks{  /* Row for social media buttons */
@@ -118,12 +119,8 @@ body{
 }
 .title{         /* Content in middle */
     width:100%;
-    height:80%;
-    margin:0 auto;
-    position:absolute;
-    top:11rem; bottom:0; right:0px; left:0px;
-    /* padding-top:11rem;
-    padding-bottom:11rem; */
+    margin-top:12rem;
+    margin-bottom:12rem;
 }
 .subtitle{
     display:block;
@@ -182,7 +179,7 @@ body{
         width: 100%;
     }
     .title{         /* Content in middle */
-        top:15rem; bottom:10rem;
+        top:15rem; bottom:11rem;
     }
     .contactLinks{
         width: 18em;

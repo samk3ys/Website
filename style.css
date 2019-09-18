@@ -65,7 +65,7 @@ body{
 }
 
 /* Footer / Social Media Links */
-#footer{
+/* #footer{
     text-align: center;
     color: white;
     background: black;
@@ -74,7 +74,7 @@ body{
     bottom: 0;
     position: fixed;
     
-}
+} */
 
 .contactLinks{  /* Row for social media buttons */
     margin-top: 0px;

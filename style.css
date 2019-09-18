@@ -35,7 +35,7 @@ body{
 }
 #menu{          /* Container for page link buttons */
     margin: auto;
-    width: 30%;
+    width: 50%;
     background: black;
 }
 .pageLink{      /* Buttons to other pages */

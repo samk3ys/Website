@@ -124,8 +124,8 @@ body{
     position:absolute;
     top:0px; bottom:0px; right:0px; left:0px;
     padding-top:11rem;
-    
-    }
+    padding-bottom:11rem;
+}
 .name{          /* Sam Keys */
     display: block;
     text-align: center;
@@ -142,7 +142,6 @@ body{
     font-size: 3vh;
     font-family:serif;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-    padding-bottom:11rem;
 }
 
 /* About Me Page */

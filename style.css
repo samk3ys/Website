@@ -123,8 +123,8 @@ body{
     margin:0 auto;
     position:absolute;
     top:0px; bottom:0px; right:0px; left:0px;
-    padding-top:11rem;
-    padding-bottom:11rem;
+    margin-top:11rem;
+    margin-bottom:11rem;
 }
 .name{          /* Sam Keys */
     display: block;

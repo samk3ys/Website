@@ -69,7 +69,8 @@ body{
     width: 100%;
     height: 10rem;
     bottom: 0;
-    position: absolute;
+    position: absolute; /* stays/waits at bottom */
+    /*position: fixed;    /* sticks w/ scroll */
     
 }
 

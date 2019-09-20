@@ -25,7 +25,7 @@ body{
     left: 0;
     right: 0;
     position: absolute;
-    height: 10.3rem;
+    height: auto;
 }
 .logo{          /* Logo picture */
     height:6rem;
@@ -38,7 +38,7 @@ body{
 .pageLink{      /* Buttons to other pages */
     margin: auto;
     display: block;
-    width: 33.333%;
+    width: 30%;
     height: 4rem;
     background-color: rgba(255,255,255,0);   /* RGB color and Alpha transparency percentage [0,1] */
     color: white;
@@ -60,6 +60,20 @@ body{
     cursor:pointer;
     transition:background-color 1000ms, color 1000ms;
 }
+.homeLink{      /* Button w/ logo. Links to home page */
+    margin: auto;
+    display: block;
+    width: 10%;
+    float: left;
+    vertical-align:middle;
+    opacity: 1;
+    transition:opacity 500ms;
+}
+.homeLink:hover{
+    cursor:pointer;
+    opacity: 0.5;
+    transition:opacity 500ms;
+}
 
 /* Footer / Social Media Links */
 #footer{
@@ -74,6 +88,11 @@ body{
     
 }
 
+.email{
+    color:white;
+    text-decoration:none;
+    font-size:inherit;
+}
 .contactLinks{  /* Row for social media buttons */
     margin-top: 0px;
     margin-bottom: 100px;
@@ -112,22 +131,30 @@ body{
 }
 
 /* Home Page (Index) */
-.homepage{      /* Special settings for homepage */
-    overflow: hidden    /* Stop scrolling */
+#homepage{      /* Special settings for homepage */
+    height:100%;
+    margin:0;
+    overflow:hidden;
 }
 .title{         /* Content in middle */
-    width:100%;
-    margin-top:12rem;
-    margin-bottom:12rem;
+    display:flex;
+    justify-content:center;
 }
-.subtitle{
+.homeLogo{      /* BIG logo on homepage */
+    position:absolute;
+    top:20%; bottom:50%; left:25%; right:25%;
+    margin:auto;
     display:block;
-    margin-top:15px;
-    text-align: center;
+}
+.subtitle{      /* title below logo, concise descriptor of me */
+    position:absolute;
+    top:55%; bottom:50%; left:25%; right:25%;
     color:white;
     font-size: 5vh;
     font-family:serif;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-align:center;
+    /*margin-top:20%;*/
 }
 
 /* About Me Page */
@@ -171,7 +198,7 @@ body{
     width:90% 
 }
 
-/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+/* Responsive layout - when the screen is less than 1000px wide */
 @media screen and (max-width: 1000px) {
     #menu { 
         width: 100%;
@@ -179,14 +206,17 @@ body{
     .title{         /* Content in middle */
         top:15rem; bottom:11rem;
     }
+    .email{
+        font-size:medium;
+    }
     .contactLinks{
         width: 18em;
     }
     .social {
         margin: 0.5em;
         height: 2em;
-        border-radius: 0.5em;
-        padding: 4px;
+        border-radius: 1.5em;
+        padding: 1px;
     }
     .content{
         margin-left:0;

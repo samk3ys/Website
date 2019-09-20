@@ -60,19 +60,24 @@ body{
     cursor:pointer;
     transition:background-color 1000ms, color 1000ms;
 }
-.homeLink{      /* Button w/ logo. Links to home page */
+.homeLinkWrapper{      /* Buttons to other pages */
     margin: auto;
     display: block;
     width: 10%;
+    height: 4rem;
+    min-width:2rem;
     float: left;
-    vertical-align:middle;
-    opacity: 1;
-    transition:opacity 500ms;
+}
+.homeLink{      /* Button w/ logo. Links to home page */
+    margin:auto;
+    height:4rem;
+    opacity:1;
+    transition:opacity 1000ms;
 }
 .homeLink:hover{
     cursor:pointer;
-    opacity: 0.5;
-    transition:opacity 500ms;
+    opacity:0.5;
+    transition:opacity 1000ms;
 }
 
 /* Footer / Social Media Links */

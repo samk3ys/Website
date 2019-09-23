@@ -6,7 +6,7 @@ html, body{
 }
 body{
     background: no-repeat center center fixed;
-    background-image:url(images/CumberlandGapSandGreen.jpg);
+    background-image:url(images/CircuitryBG-green.jpg);
     background-size:cover;
     background-position:center;
     background-blend-mode:soft-light;
@@ -137,6 +137,7 @@ body{
 
 /* Home Page (Index) */
 #homepage{      /* Special settings for homepage */
+    background-image:url(images/CumberlandGapSandGreen.jpg);
     height:100%;
     margin:0;
     overflow:hidden;

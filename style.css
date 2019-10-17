@@ -6,7 +6,7 @@ html, body{
 }
 body{
     background: no-repeat center center fixed;
-    background-image:url(images/CircuitryBG-green.jpg);
+    background-image:url(images/CircuitryBG-watermark.jpg);
     background-size:cover;
     background-position:center;
     background-blend-mode:soft-light;
@@ -27,27 +27,64 @@ body{
     position: absolute;
     height: auto;
 }
-.logo{          /* Logo picture */
+#logo{          /* Logo picture */
     height:6rem;
 }
 #menu{          /* Container for page link buttons */
     margin: auto;
-    width: 50%;
+    width: 60%;
     background: black;
 }
-.pageLink{      /* Buttons to other pages */
-    margin: auto;
+#homeLinkWrapper{      /* Buttons to other pages */
+    /* width: 20%; */
+    width: 0;
+    float: left;
+    /* margin: auto;
+    margin-bottom: 1%;
+    margin-right: 1%;
     display: block;
-    width: 30%;
+    width: 10%;
     height: 4rem;
+    min-width:2rem;
+    float: left; */
+}
+#homeLink{      /* Button w/ logo. Links to home page */
+    margin:auto;
+    /* height:4rem; */
+    height:0;
+    border-radius: 2rem;
+    /*opacity:1;*/
+    background-color: rgba(255,255,255,0);
+    transition: background-color 1500ms;
+    /*transition:opacity 1000ms, background-color 1000ms;*/
+}
+#homeLink:hover{
+    cursor:pointer;
+    /*opacity:0.5;*/
+    background-color: rgba(255,255,255,1);
+    transition: background-color 500ms;
+    /*transition:opacity 1000ms, background-color 1000ms;*/
+}
+#pageLinkWrapper{
+    /* width: 80%; */
+    width: 100%;
+    float: left;
+}
+.pageLink{      /* Buttons to other pages */
+    margin: 0 auto;
+    display: block;
+    width: 33%;
+    height: 4.3rem;
     background-color: rgba(255,255,255,0);   /* RGB color and Alpha transparency percentage [0,1] */
     color: white;
     border: 0px solid white;                 /* Border (unaffected by "background-color" */
     font-family: sans-serif;
     font-weight: bold;
     font-size: 1rem;
-    border-radius: 5px;
-    transition: background-color 1000ms, color 1000ms;
+    /*border-radius: 5px;*/
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    transition: background-color 1500ms, color 1500ms;
     float: left;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -58,26 +95,7 @@ body{
     background-color:rgba(255,255,255,1);
     color:#222;
     cursor:pointer;
-    transition:background-color 1000ms, color 1000ms;
-}
-.homeLinkWrapper{      /* Buttons to other pages */
-    margin: auto;
-    display: block;
-    width: 10%;
-    height: 4rem;
-    min-width:2rem;
-    float: left;
-}
-.homeLink{      /* Button w/ logo. Links to home page */
-    margin:auto;
-    height:4rem;
-    opacity:1;
-    transition:opacity 1000ms;
-}
-.homeLink:hover{
-    cursor:pointer;
-    opacity:0.5;
-    transition:opacity 1000ms;
+    transition:background-color 500ms, color 500ms;
 }
 
 /* Footer / Social Media Links */
@@ -124,8 +142,7 @@ body{
 
 /* Multi-page / universal elements */
 .content{
-    padding-top: 11rem;
-    padding-bottom: 11rem;
+    padding: 11rem 0 11rem 0;
     margin-left:5%;
     margin-right:5%;
 }
@@ -136,7 +153,7 @@ body{
 }
 
 /* Home Page (Index) */
-#homepage{      /* Special settings for homepage */
+#homepage{      /* Special style for homepage */
     background-image:url(images/CumberlandGapSandGreen.jpg);
     height:100%;
     margin:0;
@@ -170,14 +187,16 @@ body{
   background-color: white;
   margin-top: 20px;
   padding: 30px;
+  border-radius: 3rem;
 }
 
 .headshot{
-    width:30%;
-    display:block;
-    margin-left:auto;
-    margin-right:auto;
-    border:5px solid black;
+    width: 30%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 5px solid black;
+    border-radius: 25%;
 }
 
 /* Project Page */
@@ -185,6 +204,7 @@ body{
     background-color: white;
     margin-top: 20px;
     padding: 30px;
+    border-radius: 3rem;
 }
 .image{         /* Project image */
     background-color: #aaa;
@@ -197,6 +217,7 @@ body{
     background-color: white;
     margin-top: 20px;
     padding: 30px;
+    border-radius: 3rem;
 }
 
 .resume{
@@ -226,10 +247,10 @@ body{
         border-radius: 1.5em;
         padding: 1px;
     }
-    .content{
-        margin-left:0;
-        margin-right:0;
-    }
+    /*.content{
+        margin-left: 0;
+        margin-right: 0;
+    }*/
     
     .homeLogo{      /* BIG logo on homepage */
         width:40vh;
@@ -238,11 +259,18 @@ body{
         font-size: 3vh;
         margin-top:4vh;
     }
-    
+    #aboutBG{       /* Background */
+        padding: 20px 10px;
+    }
     .headshot{
         width: 80%;
     }
-    
+    .project{       /* individual project card */
+        padding: 20px 10px;
+    }
+    #cv {           /* Background */
+        padding: 20px 10px;
+    }
     .resume{
         width:100% 
     }

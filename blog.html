@@ -10,6 +10,7 @@
 
 <body>
     <div class="container">
+	
         <div id="header">
             <a href="index.html">
                 <img id="logo" src="images/logo.png" alt="Sam Keys" />
@@ -25,7 +26,7 @@
                         <button class="pageLink"> About Me </button>
                     </a>
                     <a href="blog.html">
-                        <button class="pageLink"> Projects </button>
+                        <button class="pageLink currentPageLink"> Projects </button>
                     </a>
                     <a href="cv.html">
                         <button class="pageLink"> R&eacutesum&eacute </button> <!-- Resume w/ accents -->
@@ -35,102 +36,303 @@
         </div>
         
         <div class="content">
-            <div class="project">
-              <h2>THIS WEBSITE</h2>
-              <h5>Work In Progress</h5>
-              <img src="images/logo.png" style="width:90%; margin-left:auto; margin-right:auto; display:block;"/>
-              <p>I started building this website in June 2019.
-                 The reason for it is to record my projects online.
-                 It should serve as a good tool to market myself to find a job as well.
-                 After all I'm going into my senior year at college.
-                 I've been fabricating a lot of logos and such for the site like the one above.</p>
-            </div>
-            <div class="project">
-              <h2>IEEE WORKBENCH</h2>
-              <h5>August 2019</h5>
-              <img src="images/Project - workbench.png" style="width:55%;"/>
-              <img src="images/Project - workbench.jpg" style="width:35%;"/>
-              <p>During my junior year I became heavily involved with UK IEEE (Institute of Electrical and Electronic Engineers), especially the robotics team.
-                 The big problem throughout the year is we had no easy way to transport and store our tools and materials.
-                 So I designed a custom workbench that would fit our needs and be very flexible for any future needs.
-                 It has 3 drawers, a lot of pegboard space, a vice, castors for mobility, and it's modular!
-                 It comes apart so we can take it to robotics competitions if we want to.
-                 Then I spent most of August 2019 building the actual thing.
-                 I still need to do a few small things to it, but it is now at UK and being used!</p>
-            </div>
-            <div class="project">
-              <h2>POKEBALL</h2>
-              <h5>Spring 2018</h5>
-              <img src="images/Project - pokeball.png" style="width:47%;"/>
-              <img src="images/Project - pokeball2.png" style="width:43%;"/>
-              <p>This is a novelty cartridge holder for my Nintendo Switch games.
-                 I designed it myself using Autodesk 123D.
-                 Some springs are included in the design to make the push button functional: it pops the lid open!
-                 I published the files on my <a href="https://www.thingiverse.com/samk3ys/designs">Thingiverse page</a> if you'd like to print one yourself.</p>
-            </div>
-            <div class="project">
-              <h2>SNAKE GAME</h2>
-              <h5>Spring 2018</h5>
-              <img src="images/Project - snake.png" style="width:50%; margin-left:auto; margin-right:auto; display:block;"/>
-              <p>A project for my embedded systems course (CPE 287) of sophomore year.
-                 I worked with a friend, Devon Schleyer, to make a snake game running on a TI Launchpad microcontroller.
-                 It's got a 8x8 bi-color LED matrix, a controller, and a cool laser-cut wooden enclosure.
-                 <a href="https://www.youtube.com/watch?v=kfUqEBOcY4w">Here's a video we made about it.</a></p>
-                 
-            </div>
-            <div class="project">
-              <h2>EAGLE PROJECT</h2>
-              <h5>June 15, 2013</h5>
-              <img src="images/Project - Eagle.jpg" style="width:50%; margin-left:auto; margin-right:auto; display:block;"/>
-              <p>Each Scout must lead a service project as their final milestone on the path to the highest rank of Eagle Scout. 
-                 My project's goal was to replace a rotting picnic table with a more durable table along with benches surrounding a track and soccer field.
-                 Before starting the project I had to fill out a mountain of paperwork, get approval from the surrounding neighborhood, raise funds, and flesh out my plan.
-                 Thanks to some generous donations I was able to get the table, 3 benches, plaques commemorating those donors (from <a href="https://www.eaglesign.com/">Eagle Sign & Design</a>), plus trees and shrubs. 
-                 To help the actual work go smoothly I designed teams with specific tasks laid out on some graphical flyers. 
-                 My wonderful friends of <a href="https://middletown71.mytroop.us/">Troop 71</a> divided into those teams and helped bring my project to fruition. 
-                 The result was better than I hoped and everything is still being enjoyed.
-              </p>
-              <p>This was my first big project. I worked very hard to ensure it went swimmingly. I accomplished something I believe was important and useful, while learning a lot along the way.
-                 My brother completed his Eagle Project during the same year and we both achieved the rank of Eagle Scouts; we the two youngest Eagles our troop had seen yet. We remained active in our troop and ended with 6 palms (additional degrees to the rank of Eagle Scout) each. 
-                 Scouting taught me countless valuable lessons, brought me many friends, and took me on wilderness adventures. 
-                 For everything the BSA did I am grateful and I would not be the man I am today without it's institution.
-              </p>
-            </div>
-            
+			
+			<ul class="sortBar">
+				<li style="padding:1rem; display:inline; float:left; font-size: 1.2em;">Sort Options:</li>
+				<li class="sortButton" onclick="sortList(0)">Alphabetically(A-Z)</li>
+				<li class="sortButton" onclick="sortList(1)">Alphabetically(Z-A)</li>
+				<li class="sortButton" onclick="sortByDate(0)">Most Recent</li>
+				<li class="sortButton" onclick="sortByDate(1)">Oldest</li>
+				<!--<li style="padding-left:1rem; padding-top:1rem; display:inline; float:left; color:white;">Categories:</li>
+				<label style="padding:1rem; display:inline; float:left; color:white;">
+					<input type="checkbox" value="All">All Projects
+				</label>
+				<label style="padding:1rem; display:inline; float:left; color:white;">
+					<input type="checkbox" value="Current">Current Projects
+				</label>
+				<label style="padding:1rem; display:inline; float:left; color:white;">
+					<input id="checkComplete" type="checkbox" onclick="hideProjects()" value="Complete">Complete Projects
+				</label>-->
+			</ul>
+		
+			<ul id="projects">
+			
+				<!-- TEMPLATE
+				<li class="project">
+				  <div>
+					<h2 style="display:inline;">TITLE</h2>
+					<span style="display:inline; float:right;">DATE</span>
+				  </div>
+				  <div>
+					<img src="images/IMAGE" style=""/>
+				  </div>
+				  <p>INFO</p>
+				</li>
+				-->
+				
+				<li class="project" data-date="201906">
+				  <div>
+					<h2 style="display:inline;">THIS WEBSITE</h2>
+					<span style="display:inline; float:right;">Summer 2019</span>
+				  </div>
+				  <p>I started building this website in June 2019.
+					 It is intended to showcase my projects online.
+					 It helped market myself to find a job and improve my web development skills as well.
+					 The image below is what I came up with as a logo for myself. </p>
+				  <div class="slideshow">
+					<img src="images/logo.png" style="width:50%; margin-left:auto; margin-right:auto; display:block;"/>
+				  </div>
+				</li>
+				
+				<li class="project" data-date="201908">
+				  <div>
+					<h2 style="display:inline;">IEEE WORKBENCH</h2>
+					<span style="display:inline; float:right;">August 2019</span>
+				  </div>
+				  <p>During my junior year I became heavily involved with UK IEEE (Institute of Electrical and Electronic Engineers), especially the robotics team.
+					 The big problem throughout the year is we had no easy way to transport and store our tools and materials.
+					 So I designed a custom workbench that would fit our needs and be very flexible for any future needs.
+					 It has 3 drawers, a lot of pegboard space, a vice, castors for mobility, and it's modular!
+					 It comes apart so we can take it to robotics competitions if we want to.
+					 Then I spent most of August 2019 building the actual thing.
+					 I still need to do a few small things to it, but it is now at UK and being used!</p>
+				  <div class="slideshow-container">
+					<div class="mySlides3">
+						<img src="images/Project - workbench.png" style="width:50%; margin-left:auto; margin-right:auto; display:block;">
+					</div>
+					<div class="mySlides3">
+						<img src="images/Project - workbench.jpg" style="width:50%; margin-left:auto; margin-right:auto; display:block;">
+					</div>
+					<a class="prevSlide" onclick="plusSlides(-1, 3)">&#10094;</a> <!-- < Arrow -->
+					<a class="nextSlide" onclick="plusSlides( 1, 3)">&#10095;</a> <!-- > Arrow -->
+				  </div>
+				</li>
+				
+				<li class="project" data-date="201805">
+				  <div>
+					<h2 style="display:inline;">POKEBALL</h2>
+					<span style="display:inline; float:right;">Spring 2018</span>
+				  </div>
+				  <p>This is a novelty cartridge holder for my Nintendo Switch games.
+					 I designed it myself using Autodesk 123D.
+					 Some springs are included in the design to make the push button functional: it pops the lid open!
+					 I published the files on my <a href="https://www.thingiverse.com/samk3ys/designs">Thingiverse page</a> if you'd like to make one yourself.</p>
+				  <div class="slideshow-container">
+					<div class="mySlides2">
+						<img src="images/Project - pokeball.png" style="width:50%; margin-left:auto; margin-right:auto; display:block;">
+					</div>
+					<div class="mySlides2">
+						<img src="images/Project - pokeball2.png" style="width:50%; margin-left:auto; margin-right:auto; display:block;">
+					</div>
+					<a class="prevSlide" onclick="plusSlides(-1, 2)">&#10094;</a> <!-- < Arrow -->
+					<a class="nextSlide" onclick="plusSlides( 1, 2)">&#10095;</a> <!-- > Arrow -->
+				  </div>
+				  
+				</li>
+				
+				<li class="project" data-date="201804">
+				  <div>
+					<h2 style="display:inline;">SNAKE GAME</h2>
+					<span style="display:inline; float:right;">Spring 2018</span>
+				  </div>
+				  <p>A project for my embedded systems course (CPE 287) of sophomore year.
+					 I worked with a friend, Devon Schleyer, to make a snake game running on a TI Launchpad microcontroller.
+					 It's got a 8x8 bi-color LED matrix, a controller, and a cool laser-cut wooden enclosure.
+					 <a href="https://www.youtube.com/watch?v=kfUqEBOcY4w">Here's a video we made about it.</a></p>
+				  <div class="slideshow-container">
+					<div class="mySlides1">
+						<img src="images/Project - snake2.JPG" style="width:50%; margin-left:auto; margin-right:auto; display:block;">
+					</div>
+					<div class="mySlides1">
+						<img src="images/Project - snake.JPG" style="width:50%; margin-left:auto; margin-right:auto; display:block;">
+					</div>
+					<a class="prevSlide" onclick="plusSlides(-1, 1)">&#10094;</a> <!-- < Arrow -->
+					<a class="nextSlide" onclick="plusSlides( 1, 1)">&#10095;</a> <!-- > Arrow -->
+				  </div>
+				</li>
+				
+				<li class="project" data-date="201306">
+				  <div>
+					<h2 style="display:inline;">EAGLE PROJECT</h2>
+					<span style="display:inline; float:right;">June 15, 2013</span>
+				  </div>
+				  <p>Each Scout must lead a service project as their final milestone on the path to the highest rank of Eagle Scout. 
+					 My project's goal was to replace a rotting picnic table with a more durable table along with benches surrounding a track and soccer field.
+					 Before starting the project I had to fill out a mountain of paperwork, get approval from the surrounding neighborhood, raise funds, and flesh out my plan.
+					 Thanks to some generous donations I was able to get the table, 3 benches, plaques commemorating those donors (from <a href="https://www.eaglesign.com/">Eagle Sign & Design</a>), plus trees and shrubs. 
+					 To help the actual work go smoothly I designed teams with specific tasks laid out on some graphical flyers. 
+					 My wonderful friends of <a href="https://middletown71.mytroop.us/">Troop 71</a> divided into those teams and helped bring my project to fruition. 
+					 The result was better than I hoped and everything is still being enjoyed.
+				  </p>
+				  <p>This was my first big project. I worked very hard to ensure it went swimmingly. I accomplished something I believe was important and useful, while learning a lot along the way.
+					 My brother completed his Eagle Project during the same year and we both achieved the rank of Eagle Scouts; we were the two youngest Eagles our troop had seen yet. We remained active in our troop and ended with 6 palms (additional degrees to the rank of Eagle Scout) each. 
+					 Scouting taught me countless valuable lessons, brought me many friends, and took me on wilderness adventures. 
+					 For everything the BSA did I am grateful and I would not be the man I am today without it's institution.
+				  </p>
+				  <div class="slideshow-container">
+					<div class="mySlides0">
+						<img src="images/Project - Eagle.jpg" style="width:50%; margin-left:auto; margin-right:auto; display:block;">
+					</div>
+					<div class="mySlides0">
+						<img src="images/Project - Eagle2.jpg" style="width:50%; margin-left:auto; margin-right:auto; display:block;">
+					</div>
+					<div class="mySlides0">
+						<img src="images/Project - Eagle3.jpg" style="width:50%; margin-left:auto; margin-right:auto; display:block;">
+					</div>
+					<div class="mySlides0">
+						<img src="images/Project - Eagle4.jpg" style="width:50%; margin-left:auto; margin-right:auto; display:block;">
+					</div>
+					<div class="mySlides0">
+						<img src="images/Project - Eagle5.jpg" style="width:50%; margin-left:auto; margin-right:auto; display:block;">
+					</div>
+					<a class="prevSlide" onclick="plusSlides(-1, 0)">&#10094;</a> <!-- < Arrow -->
+					<a class="nextSlide" onclick="plusSlides( 1, 0)">&#10095;</a> <!-- > Arrow -->
+				  </div>
+				</li>
+			</ul>
         </div>
 
         <span id="footer">
             <h2> 
-                <a href="mailto:sam.keys@uky.edu" style="color:white;text-decoration:none;">sam.keys@uky.edu</a> | 
+                <!--<a href="mailto:sam.keys@uky.edu" style="color:white;text-decoration:none;">sam.keys@uky.edu</a> | -->
                 <a href="mailto:samk3ys@gmail.com" style="color:white;text-decoration:none;">samk3ys@gmail.com </a>
             </h2>
             <div class="contactLinks">
-                <a href="https://www.linkedin.com/in/sam-keys-a2680614a/">
-                    <img class="social" src="images/linkedin.jpg" alt="LinkedIn" />
-                </a>
                 <a href="https://github.com/samk3ys">
                     <img class="social" src="images/github.jpg" alt="GitHub" />
                 </a>
-                <a href="https://www.youtube.com/channel/UCEsaXS_GutYhoXRCPiKzE4A">
-                    <img class="social" src="images/youtube.jpg" alt="YouTube" />
+				<a href="https://www.linkedin.com/in/sam-keys-a2680614a/">
+                    <img class="social" src="images/linkedin.jpg" alt="LinkedIn" />
+                </a>
+				<a href="https://twitter.com/SamK3ys">
+                    <img class="social" src="images/twitter.jpg" alt="Twitter" />
                 </a>
                 <a href="https://www.instagram.com/samk3ys/">
                     <img class="social" src="images/instagram.jpg" alt="Instagram" />
                 </a>
-                
-                <a href="https://twitter.com/SamK3ys">
-                    <img class="social" src="images/twitter.jpg" alt="Twitter" />
-                </a>
-                <a href="https://www.facebook.com/sam.keys.520">
+				<a href="https://www.facebook.com/sam.keys.520">
                     <img class="social" src="images/facebook.jpg" alt="Facebook" />
                 </a>
-                
+				<a href="https://thingiverse.com/samk3ys">
+                    <img class="social" src="images/thingiverse.jpg" alt="Thingiverse" />
+                </a>
+                <a href="https://www.youtube.com/channel/UCEsaXS_GutYhoXRCPiKzE4A">
+                    <img class="social" src="images/youtube.jpg" alt="YouTube" />
+                </a>
             </div>
         </span>
     </div> <!--end container-->
 
     <script type="text/javascript" src="js/sticky.js"> <!--Sticky Header-->
     </script>
+	
+	<!-- Sorting scripts -->
+	<script>
+	function sortList(dir) {
+	  /* dir for ascending (dir=0) or descending (dir=1) alphabetical sort */
+	  var list, i, switching, b, shouldSwitch;
+	  list = document.getElementById("projects");
+	  switching = true;
+	  /* Make a loop that will continue until no switching has been done: */
+	  while (switching) {
+		// Start by saying: no switching is done:
+		switching = false;
+		b = list.getElementsByTagName("li");
+		// Loop through all list items:
+		for (i = 0; i < (b.length - 1); i++) {
+		  // Start by saying there should be no switching:
+		  shouldSwitch = false;
+		  /* Check if the next item should switch place with the current item: */
+		  if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase() && dir==0) {
+			/* If next item is alphabetically lower than current item, mark as a switch and break the loop: */
+			shouldSwitch = true;
+			break;
+		  }
+		  else if (b[i].innerHTML.toLowerCase() < b[i + 1].innerHTML.toLowerCase() && dir==1) {
+			/* If next item is alphabetically lower than current item, mark as a switch and break the loop: */
+			shouldSwitch = true;
+			break;
+		  }
+		}
+		if (shouldSwitch) {
+		  /* If a switch has been marked, make the switch and mark the switch as done: */
+		  b[i].parentNode.insertBefore(b[i + 1], b[i]);
+		  switching = true;
+		}
+	  }
+	}
+	
+	function sortByDate(dir) {
+	  /* dir for ascending (dir=0) or descending (dir=1) alphabetical sort */
+	  var list, i, switching, b, shouldSwitch;
+	  list = document.getElementById("projects");
+	  switching = true;
+	  /* Make a loop that will continue until no switching has been done: */
+	  while (switching) {
+		// Start by saying: no switching is done:
+		switching = false;
+		b = list.getElementsByTagName("li");
+		// Loop through all list items:
+		for (i = 0; i < (b.length - 1); i++) {
+		  // Start by saying there should be no switching:
+		  shouldSwitch = false;
+		  /* Check if the next item should switch place with the current item: */
+		  if (b[i].dataset.date < b[i+1].dataset.date && dir==0) {
+			/* If next item is alphabetically lower than current item, mark as a switch and break the loop: */
+			shouldSwitch = true;
+			break;
+		  }
+		  else if (b[i].dataset.date > b[i+1].dataset.date && dir==1) {
+			/* If next item is alphabetically lower than current item, mark as a switch and break the loop: */
+			shouldSwitch = true;
+			break;
+		  }
+		}
+		if (shouldSwitch) {
+		  /* If a switch has been marked, make the switch and mark the switch as done: */
+		  b[i].parentNode.insertBefore(b[i + 1], b[i]);
+		  switching = true;
+		}
+	  }
+	}
+	
+	function hideProjects() {
+	  /* hide projects based on filter checkboxes */
+		var list, i, b;
+		var checkBox = document.getElementById("myCheck");
+		list = document.getElementById("projects");
+		b = list.getElementById("complete");
+		// Loop through all list items:
+		for (i = 0; i < (b.length - 1); i++) {
+		  /* Check if the current project should be hidden: */
+		  b[i].style.display = "none";
+		}
+	}
+	
+	
+	<!-- Slideshow scripts -->
+	var slideIndex = [1, 1, 1, 1];
+	var slideId = ["mySlides0", "mySlides1", "mySlides2", "mySlides3"]
+	for (i = 0; i < slideId.length; i++) {
+		showSlides(1, i); <!-- Show the first pic in each slideshow to start -->
+	}
+
+	function plusSlides(n, no) {
+	  showSlides(slideIndex[no] += n, no);
+	}
+
+	function showSlides(n, no) {
+	  var i;
+	  var x = document.getElementsByClassName(slideId[no]);
+	  if (n > x.length) {slideIndex[no] = 1}    
+	  if (n < 1) {slideIndex[no] = x.length}
+	  for (i = 0; i < x.length; i++) {
+		 x[i].style.display = "none";  
+	  }
+	  x[slideIndex[no]-1].style.display = "block";  
+	}
+	
+	</script>
     
 </body>
 

@@ -6,7 +6,7 @@ html, body{
 }
 body{
     background: no-repeat center center fixed;
-    background-image:url(images/CircuitryBG-watermark.jpg);
+    background-image:url(images/CircuitryBG-blue2.jpg);
     background-size:cover;
     background-position:center;
     background-blend-mode:soft-light;
@@ -26,6 +26,7 @@ body{
     right: 0;
     position: absolute;
     height: auto;
+	z-index: 99;
 }
 #logo{          /* Logo picture */
     height:6rem;
@@ -92,53 +93,16 @@ body{
     white-space: nowrap;
 }
 .pageLink:hover{
-    background-color:rgba(255,255,255,1);
-    color:#222;
+    background-color: #37c0f6;
+    color:#000;
     cursor:pointer;
     transition:background-color 500ms, color 500ms;
 }
-
-/* Footer / Social Media Links */
-#footer{
-    text-align: center;
-    color: white;
-    background: black;
-    width: 100%;
-    height: 10rem;
-    bottom: 0;
-    position: absolute; /* stays/waits at bottom */
-    /*position: fixed;    /* sticks w/ scroll */
-    
+.currentPageLink{      /* Highlights current page */
+    background-color: rgba(255,255,255,1);
+	color:#000;
 }
 
-.email{
-    color:white;
-    text-decoration:none;
-    font-size:inherit;
-}
-.contactLinks{  /* Row for social media buttons */
-    margin-top: 0px;
-    margin-bottom: 100px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 30em;       /* #buttons * (buttonWidth + 2*buttonMargin) */
-    background: black;
-}
-.social{        /* Social media button (use <a> tag around) */
-    margin: 1em;
-    height: 3em;
-    border-radius: 1.5em;
-    padding: 4px;
-    opacity: 0.5;
-    transition:opacity 500ms, border-radius 1000ms;
-    text-decoration:none;
-    float: left;
-}
-.social:hover{  /* Social media button animation */
-    opacity: 1;
-    border-radius: 10px;
-    transition:opacity 500ms, border-radius 1000ms;
-}
 
 /* Multi-page / universal elements */
 .content{
@@ -200,16 +164,81 @@ body{
 }
 
 /* Project Page */
+#projects {
+    border-radius: 3rem;
+}
+
 .project{       /* individual project card */
     background-color: white;
     margin-top: 20px;
+	/*margin-bottom: 100px;*/
     padding: 30px;
     border-radius: 3rem;
+	list-style-type:none;	/* listed item (li) w/o bullets */
 }
-.image{         /* Project image */
+
+.image {        /* Project image */
     background-color: #aaa;
     width: 100%;
     padding: 20px;
+}
+.sortBar {
+	list-style-type: none;
+	width: 70%;
+	margin: auto;
+	padding: 10px;
+	overflow: hidden;
+	background-color: #37c0f0;
+	border-radius: 3rem;
+}
+.sortButton {
+	padding:1rem;
+	display:inline;
+	float:left;
+	color: black;
+	font-size: 1.2em;
+	border-radius: 3rem;
+	transition:background-color 500ms, color 500ms;
+}
+.sortButton:hover{
+    background-color:rgba(255,255,255,1);
+    color:#222;
+    cursor:pointer;
+    transition:background-color 500ms, color 500ms;
+}
+
+/* Slideshow for each project. Start slideshow images as invisible */
+.mySlides0, .mySlides1, .mySlides2, .mySlides3 {display: none}
+
+.slideshow-container {	/* Slideshow container */
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.prevSlide, .nextSlide {	/* Next & previous slide buttons */
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  color: black;
+  font-weight: bold;
+  font-size: 30px;
+  transition: 0.6s ease;
+  border-radius: 0 5px 5px 0;
+  user-select: none;
+}
+/* Position the "next button" to the right */
+.nextSlide {
+  right: 0;
+  border-radius: 5px 0 0 5px;
+}
+
+/* On hover, add a grey background color */
+.prevSlide:hover, .nextSlide:hover {
+  background-color: #37c0f6;
+  color: white;
 }
 
 /* Curriculum Vitae Page */
@@ -226,6 +255,53 @@ body{
     display:block;
     width:90% 
 }
+
+
+/* Footer / Social Media Links */
+#footer{
+    text-align: center;
+    color: white;
+    background: black;
+    width: 100%;
+    height: 10rem;
+    bottom: 0;
+    position: absolute; /* stays/waits at bottom */
+    /*position: fixed;    /* sticks w/ scroll */
+    
+}
+
+.email{
+    color:white;
+    text-decoration:none;
+    font-size:inherit;
+}
+
+.contactLinks{  /* Row for social media buttons */
+    margin-top: 0px;
+    margin-bottom: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 35em;       /* #buttons * (buttonWidth + 2*buttonMargin) = 5 per button*/
+    background: black;
+}
+
+.social{        /* Social media button (use <a> tag around) */
+    margin: 1em;
+    width: 3em;
+    border-radius: 1.5em;
+    padding: 4px;
+    opacity: 0.5;
+    transition:opacity 500ms, border-radius 1000ms;
+    text-decoration:none;
+    float: left;
+}
+
+.social:hover{  /* Social media button animation */
+    opacity: 1;
+    border-radius: 10px;
+    transition:opacity 500ms, border-radius 1000ms;
+}
+
 
 /* Responsive layout - when the screen is less than 1000px wide */
 @media screen and (max-width: 1000px) {
